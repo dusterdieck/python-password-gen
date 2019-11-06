@@ -20,11 +20,13 @@ while(len(str) == 0):
   print("Password cannot be blank.")
   str = input("Enter password: ").strip()
 
+site = input("Site to be used on: ").strip()
+
 # encoding using encode() 
 # then sending to md5()
 # then to hex string 
 # then to list for easy manipulation
-result = list(hashlib.md5(str.encode()).hexdigest())
+result = list(hashlib.md5((site+str).encode()).hexdigest())
 
 # if using caps, choose two arbitrary values to make caps
 if useCaps == "y":
