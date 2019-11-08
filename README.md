@@ -5,7 +5,7 @@ Simple console application for generating password using md5 hashing and python
 
 This simple application takes in a couple of user prompts and a password and returns a 32 character password generated from the md5 hash plus a couple of arbitrary rules for choosing characters to capitalize or replace with special characters, if the user so chooses.
 
-First, install `pyperclip`
+First, install [pyperclip](http://coffeeghost.net/2010/10/09/pyperclip-a-cross-platform-clipboard-module-for-python/) and ensure you have the requirements for your os.
 ```bash
 pip install pyperclip
 ```
