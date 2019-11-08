@@ -1,5 +1,6 @@
 # Python 3 
 import hashlib
+import pyperclip
 
 # list of specials corresponding to shift + number on standard qwerty keyboard
 specials = [")", "!", "@", "#", "$", "%", "^", "&", "*", "("]
@@ -49,7 +50,17 @@ if useSpecial == "y":
   while(not result[num].isdigit()):
     num = (num + 1) % 32
   result[num] = specials[int(result[num])]
+
+final = "".join(result)
   
 # printing the new value.
 print("The hashed password is: ", end ="") 
-print("".join(result))
+print(final)
+
+copy = input("Copy to clipboard? (Y/n)").lower() or "y"
+while(copy != "y" and copy != "n"):
+  print("Answer only Y or N")
+  copy = input("Copy to clipboard? (Y/n)").lower() or "y"
+
+if copy == "y":
+  pyperclip.copy(final)
